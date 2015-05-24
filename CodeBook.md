@@ -1,7 +1,22 @@
 # Codebook
 
+This code book describes the tidy data set created as part of the Getting and Cleaning Data course project. The raw data is based on the Human Activity Recognition Using Smartphones dataset. The experiments to gather this data have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist.
+
+**Note:** 
+Information from the original data set has been consolidated. The tidy data set provides an average value aggregated for each observation type based on the following groups:
+
+- subject
+- activity
+- featDomain
+- featAccelaration
+- featVariable
+- featJerk
+- featMagnitude
+- featAxis
+
 ## Variables used in the tidy data set
 
+The R script transforms multiple data sets provided within the original data into one data set with the following variables:
 
 Variable          | Variable Description
 -----------------|------------
@@ -46,6 +61,7 @@ meanValue        | Average of each variable for each activity and each subject
 ```
 
 ## Tidy dataset output
+
 
 ```
 ##   subject activity featDomain featAcceleration featInstrument featJerk featMagnitude featVariable featAxis count   meanValue
