@@ -53,6 +53,11 @@ run_analysis <- function() {
     grepl(regex, df$featureCode)
   }
   
+  # Two matrices are created. Matrix m1 provides the lookup values. Matrix m2 provides
+  # TRUE/FALSE values as a result of the regular expression analysing the feature code
+  # in the main data frame. A new column in the main data frame is created with a factor
+  # variable using the dimensions of each feature. If no dimension is available, NA is used.  
+  
   # Features with 2 categories
   n <- 2
   m1 <- matrix(seq(1, 2), nrow=n)
