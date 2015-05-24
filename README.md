@@ -4,7 +4,7 @@
 - Author: HerrFarmer
 - URL: https://github.com/HerrFarmer/GettingAndCleaningData
 
-This repository is based the course project as part of the Coursera **Getting and Cleaning Data** course.
+This repository is based on the course project as part of the Coursera **Getting and Cleaning Data** course.
 
 ## Context:
 The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. You will be graded by your peers on a series of yes/no questions related to the project. You will be required to submit: 1) a tidy data set as described below, 2) a link to a Github repository with your script for performing the analysis, and 3) a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md. You should also include a README.md in the repo with your scripts. This repo explains how all of the scripts work and how they are connected.  
@@ -24,19 +24,18 @@ This repository contains the following files and folders:
 - run_analysis.r
 - CodeBook.md
 
-UCI HAR Dataset contains the raw data processed by the R script run_analysis (data in subfolder 'Inertial Signals' is not used.r.
+UCI HAR Dataset contains the raw data processed by the R script run_analysis. *Note that data in subfolder 'Inertial Signals' is not used.*
 
-The R script first loads all the datasets into data frames and starts to merge:
+The R script first loads all the datasets into data frames and then starts to merge:
 
 - Subject data for training and test.
 - Label data for training and test (the activities).
-- Data containing the measurments for training and test.
+- Data containing the measurements for training and test.
 
-It then filters for variables for mean and std measurements only:
+It then filters for variables for 'mean' and 'std' measurements only:
 
 - The data frame containing the measurements is filtered using a logical vector with the help of a regular expression to identify all columns needed.
-- The same technique is applied to the data frame containing the feature descriptions.
-- These column names are then applied to the data frame containing the measurements.
+- The same technique is applied to the data frame containing the feature descriptions. The resulting vector of valid feature names is then applied to the data frame containing the measurements to provide the column names.
 
 After the right columns have been identified, everything is put together:
 
