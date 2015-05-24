@@ -49,7 +49,7 @@ The last step of the script is to create multiple groups and to summarize all va
 
 ## Usage
 
-- Open the R script run_analysis.r. It contains function run_analysis.
+- Open the R script run_analysis.r. It contains function the run_analysis().
 - Make sure that in your workspace you have a folder named 'UCI HAR Dataset' containing the data.
 - Run the function. It will produce the tidy data set as a text file.
 
