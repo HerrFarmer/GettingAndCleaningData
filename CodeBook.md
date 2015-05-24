@@ -1,0 +1,55 @@
+# Codebook
+
+## Variables used in the tidy data set
+
+
+Variable          | Variable Description
+-----------------|------------
+subject          | Subject ID who performed the activity (with a range from 1 to 30)
+activity         | Activity Description (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
+featDomain       | Time domain or frequency domain signals (Time or Freq)
+featInstrument   | Measuring instrument (Accelerometer or Gyroscope)
+featAcceleration | Acceleration signal (Body or Gravity)
+featVariable     | Variable (Mean or STD)
+featJerk         | Jerk signal
+featMagnitude    | Magnitude of the signals calculated using the Euclidean norm
+featAxis         | 3-axial signals in the X, Y and Z directions (X, Y, or Z)
+count            | Count of data points used to compute the average value
+meanValue        | Average of each variable for each activity and each subject
+
+
+## Variable information
+
+```
+## Classes 'grouped_df', 'tbl_df', 'tbl' and 'data.frame':  2310 obs. of  11 variables:
+##  $ subject         : int  1 1 1 1 1 1 1 1 1 1 ...
+##  $ activity        : Factor w/ 6 levels "LAYING","SITTING",..: 4 4 4 4 4 4 4 4 4 4 ...
+##  $ featDomain      : Factor w/ 2 levels "Time","Freq": 1 1 1 1 1 1 1 1 1 1 ...
+##  $ featAcceleration: Factor w/ 3 levels NA,"Body","Gravity": 1 1 1 1 1 1 1 1 1 1 ...
+##  $ featInstrument  : Factor w/ 2 levels "Accelerometer",..: 2 2 2 2 2 2 2 2 2 2 ...
+##  $ featJerk        : Factor w/ 2 levels NA,"Jerk": 1 1 1 1 1 1 1 1 2 2 ...
+##  $ featMagnitude   : Factor w/ 2 levels NA,"Magnitude": 1 1 1 1 1 1 2 2 1 1 ...
+##  $ featVariable    : Factor w/ 2 levels "Mean","SD": 1 1 1 2 2 2 1 2 1 1 ...
+##  $ featAxis        : Factor w/ 4 levels NA,"X","Y","Z": 2 3 4 2 3 4 1 1 2 3 ...
+##  $ count           : int  347 347 347 347 347 347 347 347 347 347 ...
+##  $ meanValue       : num  -0.0209 -0.0881 0.0863 -0.6866 -0.451 ...
+##  - attr(*, "vars")=List of 8
+##   ..$ : symbol subject
+##   ..$ : symbol activity
+##   ..$ : symbol featDomain
+##   ..$ : symbol featAcceleration
+##   ..$ : symbol featInstrument
+##   ..$ : symbol featJerk
+##   ..$ : symbol featMagnitude
+##   ..$ : symbol featVariable
+##  - attr(*, "drop")= logi TRUE
+```
+
+
+
+
+
+
+
+
+
