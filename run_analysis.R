@@ -85,7 +85,7 @@ run_analysis <- function() {
   dfByGroups = summarize(df,count=n(), meanValue=mean(value))
   
   # Save as tidy data set in workspace
-  write.table(dfByGroups, file="ActivityRecognitionUsingSmartPhones.txt",sep = ";", col.names = colnames(dfByGroups), row.name = FALSE)
+  write.table(dfByGroups, file="ActivityRecognitionUsingSmartPhones.txt",sep = "\t", col.names = colnames(dfByGroups), row.name = FALSE)
   
   
 }
