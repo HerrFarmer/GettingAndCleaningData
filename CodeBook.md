@@ -45,8 +45,19 @@ meanValue        | Average of each variable for each activity and each subject
 ##  - attr(*, "drop")= logi TRUE
 ```
 
+## Tidy dataset output
 
-
+```
+##   subject activity featDomain featAcceleration featInstrument featJerk featMagnitude featVariable featAxis count   meanValue
+##1        1  WALKING       Time               NA      Gyroscope       NA            NA         Mean        X   347 -0.02087641
+##2        1  WALKING       Time               NA      Gyroscope       NA            NA         Mean        Y   347 -0.08807227
+##3        1  WALKING       Time               NA      Gyroscope       NA            NA         Mean        Z   347  0.08626417
+##4        1  WALKING       Time               NA      Gyroscope       NA            NA           SD        X   347 -0.68655572
+##5        1  WALKING       Time               NA      Gyroscope       NA            NA           SD        Y   347 -0.45097981
+##6        1  WALKING       Time               NA      Gyroscope       NA            NA           SD        Z   347 -0.59749614
+##7        1  WALKING       Time               NA      Gyroscope       NA     Magnitude         Mean       NA   347 -0.47540479
+##8        1  WALKING       Time               NA      Gyroscope       NA     Magnitude           SD       NA   347 -0.49983959
+```
 
 
 

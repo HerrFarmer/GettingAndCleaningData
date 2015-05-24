@@ -20,38 +20,38 @@ You should create one R script called run_analysis.R that does the following.
 ## Content
 This repository contains the following files and folders:
 
-- UCI HAR Dataset (data in folder Inertial Signals is not used)
+- UCI HAR Dataset
 - run_analysis.r
 - CodeBook.md
 
-UCI HAR Dataset contains the raw data processed by the R script run_analysis.r.The R script does the following:
+UCI HAR Dataset contains the raw data processed by the R script run_analysis (data in subfolder 'Inertial Signals' is not used.r.
 
-Load all datasets into data frames and merge:
+The R script first loads all the datasets into data frames and starts to merge:
 
-- Merge subject data for training and test.
-- Merge label data for training and test (the activities).
-- Merge the data containing the measurments for training and test.
+- Subject data for training and test.
+- Label data for training and test (the activities).
+- Data containing the measurments for training and test.
 
-Filter for mean and std measurements:
+It then filters for variables for mean and std measurements only:
 
-- The data frame containing the measurements if filtered using a logical vector using a regular expression and subsetting of all columns.
-- The same technique is applied to the data frame containng the feature descriptions.
+- The data frame containing the measurements is filtered using a logical vector with the help of a regular expression to identify all columns needed.
+- The same technique is applied to the data frame containing the feature descriptions.
 - These column names are then applied to the data frame containing the measurements.
 
-Then all the data is put together:
+After the right columns have been identified, everything is put together:
 
 - Merge activities with the activity labels
 - Merge subjects with activities
 - Merge subjects with the measurements
 
-Once everything is combined, the data frame is transformed from a wide into a long form using the melt functionality. From there, new columns are added to break down the feature name, as in the raw dataset, the feature name describes multipe features.
+Once everything is combined, the data frame is transformed from a wide into a long form using the melt functionality. From there, new columns are added to break down the feature name (because in the raw dataset, the feature name describes multipe features).
 
 The last step of the script is to create multiple groups and to summarize all values using the mean functionality. The new tidy dataset is saved as a text file: ActivityRecognitionUsingSmartPhones.txt.
 
 ## Usage
 
 - Open the R script run_analysis.r. It contains function run_analysis.
-- Make sure that in your workspace, your have a folder named 'UCI HAR Dataset' containing the data.
+- Make sure that in your workspace you have a folder named 'UCI HAR Dataset' containing the data.
 - Run the function. It will produce the tidy data set as a text file.
 
 
