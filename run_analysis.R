@@ -49,35 +49,36 @@ run_analysis <- function() {
   df = melt(df,id=c("subject", "activityNumber", "activity"),variable.name="featureCode")  
   
   # Add feature columns, use helper function to access feature name
-  grepFeature <- function (regex) {
+  checkForFeature <- function (regex) {
     grepl(regex, df$featureCode)
   }
   
   # Two matrices are created. Matrix m1 provides the lookup values. Matrix m2 provides
   # TRUE/FALSE values as a result of the regular expression analysing the feature code
   # in the main data frame. A new column in the main data frame is created with a factor
-  # variable using the dimensions of each feature. If no dimension is available, NA is used.  
+  # variable using the dimensions of each feature (using matrix multiplication). If no
+  # dimension is available, NA is used.  
   
   # Features with 2 categories
   n <- 2
   m1 <- matrix(seq(1, 2), nrow=n)
-  m2 <- matrix(c(grepFeature("^t"), grepFeature("^f")), ncol=nrow(m1))
+  m2 <- matrix(c(checkForFeature("^t"), checkForFeature("^f")), ncol=nrow(m1))
   df$featDomain <- factor(m2 %*% m1, labels=c("Time", "Freq"))
-  m2 <- matrix(c(grepFeature("Acc"), grepFeature("Gyro")), ncol=nrow(m1))
+  m2 <- matrix(c(checkForFeature("Acc"), checkForFeature("Gyro")), ncol=nrow(m1))
   df$featInstrument <- factor(m2 %*% m1, labels=c("Accelerometer", "Gyroscope"))
-  m2 <- matrix(c(grepFeature("BodyAcc"), grepFeature("GravityAcc")), ncol=nrow(m1))
+  m2 <- matrix(c(checkForFeature("BodyAcc"), checkForFeature("GravityAcc")), ncol=nrow(m1))
   df$featAcceleration <- factor(m2 %*% m1, labels=c(NA, "Body", "Gravity"))
-  m2 <- matrix(c(grepFeature("mean()"), grepFeature("std()")), ncol=nrow(m1))
+  m2 <- matrix(c(checkForFeature("mean()"), checkForFeature("std()")), ncol=nrow(m1))
   df$featVariable <- factor(m2 %*% m1, labels=c("Mean", "SD"))
   
   # Features with 1 category
-  df$featJerk <- factor(grepFeature("Jerk"), labels=c(NA, "Jerk"))
-  df$featMagnitude <- factor(grepFeature("Mag"), labels=c(NA, "Magnitude"))
+  df$featJerk <- factor(checkForFeature("Jerk"), labels=c(NA, "Jerk"))
+  df$featMagnitude <- factor(checkForFeature("Mag"), labels=c(NA, "Magnitude"))
   
   # Features with 3 categories
   n <- 3
   m1 <- matrix(seq(1, 3), nrow=n)
-  m2 <- matrix(c(grepFeature("-X"), grepFeature("-Y"), grepFeature("-Z")), ncol=nrow(m1))
+  m2 <- matrix(c(checkForFeature("-X"), checkForFeature("-Y"), checkForFeature("-Z")), ncol=nrow(m1))
   df$featAxis <- factor(m2 %*% m1, labels=c(NA, "X", "Y", "Z"))  
   
   # Create groups  
