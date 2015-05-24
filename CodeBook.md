@@ -7,12 +7,7 @@ Information from the original data set has been consolidated. The tidy data set 
 
 - subject
 - activity
-- featDomain
-- featAccelaration
-- featVariable
-- featJerk
-- featMagnitude
-- featAxis
+- feature (domain, acceleration,variable, jerk, magnitude, axis)
 
 ## Variables used in the tidy data set
 

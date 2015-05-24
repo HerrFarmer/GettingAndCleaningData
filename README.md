@@ -24,7 +24,7 @@ This repository contains the following files and folders:
 - run_analysis.r
 - CodeBook.md
 
-UCI HAR Dataset contains the raw data processed by the R script run_analysis. *Note that data in subfolder 'Inertial Signals' is not used.*
+The folder UCI HAR Dataset contains the raw data processed by the R script run_analysis. *Note that data in subfolder 'Inertial Signals' is not used.*
 
 The R script first loads all the datasets into data frames and then starts to merge:
 
@@ -35,7 +35,7 @@ The R script first loads all the datasets into data frames and then starts to me
 It then filters for variables for 'mean' and 'std' measurements only:
 
 - The data frame containing the measurements is filtered using a logical vector with the help of a regular expression to identify all columns needed.
-- The same technique is applied to the data frame containing the feature descriptions. The resulting vector of valid feature names is then applied to the data frame containing the measurements to provide the column names.
+- The same technique is applied to the data frame containing the feature descriptions. The resulting vector of valid feature names is then used to provide the column names for the data frame containing the measurements.
 
 After the right columns have been identified, everything is put together:
 
